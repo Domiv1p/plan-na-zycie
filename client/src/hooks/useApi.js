@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api' : '/api';
 
 export function useApi() {
   const request = useCallback(async (endpoint, options = {}) => {

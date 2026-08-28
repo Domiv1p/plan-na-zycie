@@ -1,5 +1,5 @@
 const VAPID_PUBLIC_KEY = 'BE1oywJYD0j1iZT1cxeT3QB58Rovvdx-XmSJj4ycyAnkPHIXZV-yOwgUORGJcj_AyRBJo6DH6yYwwDMctmfefpo';
-const API_URL = 'http://localhost:3001/api';
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api' : '/api';
 
 export function isPushSupported() {
   return 'serviceWorker' in navigator && 'PushManager' in window;
